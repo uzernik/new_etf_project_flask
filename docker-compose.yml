@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
+      - ./backend/data:/app/data
+    environment:
+      - FLASK_ENV=development
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"   # Map React's default port
+    volumes:
+      - ./frontend:/app        # Sync code changes between host and container
+      - /app/node_modules       # Avoid overwriting node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true # Ensure hot-reloading works in Docker
+    stdin_open: true  # Keep container open for terminal input (e.g., Ctrl+C)
+    tty: true         # Interactive terminal for development mode
+

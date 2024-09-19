@@ -1,0 +1,19 @@
+{
+  "name": "etf-project",
+  "version": "1.0.0",
+  "description": "ETF data visualization project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {}
+
+  "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject"
+  }    
+}

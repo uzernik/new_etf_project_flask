@@ -1,0 +1,10 @@
+# Python-specific
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+.venv/
+ 
+# Backend-specific data (if applicable)
+data/
